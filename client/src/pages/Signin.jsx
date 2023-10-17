@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link , useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from 'react-redux';
-import { signInStart, signInSucess, signInfailure } from "../redux/user/userSlice";
+import { signInStart, signInSucess, signInFailure } from "../redux/user/userSlice";
 import OAuth from "../components/OAuth";
 
 
@@ -37,7 +37,7 @@ export default function SingIn() {
       const data = await res.json();
       console.log(data);
       if(data.success === false){
-        dispatch(signInfailure(data.message));
+        dispatch(signInFailure(data.message));
         
         return;
       }
@@ -47,7 +47,7 @@ export default function SingIn() {
       navigate('/');
 
     }catch(error){
-      dispatch(signInfailure(error.message));
+      dispatch(signInFailure(error.message));
       // setLoading(false);
       // setError(error.message);
       
