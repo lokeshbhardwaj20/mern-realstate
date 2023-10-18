@@ -46,7 +46,8 @@ export default function SingUp() {
       setLoading(false);
       setError(error.message);
       
-    }};
+    }
+  };
    
 
   return (

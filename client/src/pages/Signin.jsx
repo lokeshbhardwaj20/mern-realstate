@@ -38,19 +38,15 @@ export default function SingIn() {
       console.log(data);
       if(data.success === false){
         dispatch(signInFailure(data.message));
-        
         return;
       }
       dispatch(signInSucess(data)); 
-      // setLoading(false);
-      // setError(null)
+     
       navigate('/');
 
     }catch(error){
       dispatch(signInFailure(error.message));
-      // setLoading(false);
-      // setError(error.message);
-      
+  
     }};
    
 
@@ -84,7 +80,7 @@ export default function SingIn() {
           <span className="text-blue-700"> Sign-Up</span>
         </Link>
       </div>
-      {error &&<p className="text-red-500 mt-5">{error}</p>} 
+      {error && <p className="text-red-500 mt-5">{error}</p>} 
     </div>
   );
 }
