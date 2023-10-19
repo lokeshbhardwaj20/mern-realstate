@@ -5,7 +5,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import { signInStart, signInSucess, signInFailure } from "../redux/user/userSlice";
 import OAuth from "../components/OAuth";
 
-
 export default function SingIn() {
   const [formData, setFormData] = useState({});
   const {loading, error} = useSelector((state) =>state.user);
@@ -13,7 +12,7 @@ export default function SingIn() {
   // const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -24,8 +23,7 @@ export default function SingIn() {
     e.preventDefault();
     try{
       dispatch(signInStart())
-      const res = await fetch('/api/auth/signin',
-      {
+      const res = await fetch('/api/auth/signin',{
         method:'POST',
         headers:{
           'Content-Type':'application/json',
@@ -46,6 +44,7 @@ export default function SingIn() {
 
     }catch(error){
       dispatch(signInFailure(error.message));
+      console.log(error);
   
     }};
    
@@ -61,6 +60,7 @@ export default function SingIn() {
           className="border p-3 rounded-lg "
           id="email"
           onChange={handleChange}
+          required
         />
         <input
           type="password"
@@ -68,6 +68,7 @@ export default function SingIn() {
           className="border p-3 rounded-lg "
           id="password"
           onChange={handleChange} 
+          required
         />
         <button disabled={loading} className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80">
           {loading ? 'Loading...' : 'Sign In'}
@@ -80,7 +81,7 @@ export default function SingIn() {
           <span className="text-blue-700"> Sign-Up</span>
         </Link>
       </div>
-      {error && <p className="text-red-500 mt-5">{error}</p>} 
+      { error && <p className="text-red-500 mt-5">{error}</p> } 
     </div>
   );
 }
