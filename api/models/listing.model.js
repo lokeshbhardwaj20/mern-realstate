@@ -37,7 +37,7 @@ import mongoose from "mongoose";
         parking:{
             type:Boolean,
             required:true,
-        },
+        }, 
         type:{
             type:String,
             required:true,
