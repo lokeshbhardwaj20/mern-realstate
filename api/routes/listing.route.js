@@ -8,4 +8,5 @@ const router = express.Router();
 router.post('/create',verifyToken, createListing);
 
 
+
 export default router;

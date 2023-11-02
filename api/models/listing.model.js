@@ -46,7 +46,7 @@ import mongoose from "mongoose";
             type:Boolean,
             required:true,
         },
-        image:{
+        imageUrls:{
             type:Array,
             required:true,
         },
