@@ -279,7 +279,7 @@ export default function Profile() {
             </Link>
             
 
-            <Link to={`/listings/${listing._id}`} className="text-slate-700 font-semibold flex-1 hover:underline truncate "> <p >{listing.name}</p>
+            <Link to={`/listing/${listing._id}`} className="text-slate-700 font-semibold flex-1 hover:underline truncate "> <p >{listing.name}</p>
             </Link>
 
             <div className="flex flex-col items-center">
