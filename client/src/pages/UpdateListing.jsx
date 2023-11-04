@@ -169,9 +169,9 @@ export default function CreateListing() {
             <div className="flex flex-col gap-4 flex-1" >
                 <input type="text"  placeholder='Name' className='border p-3 rounded-lg  ' id="name" maxLength="62" minLength="10" required onChange={handleChanges} value={formData.name}/>  
 
-                <textarea type="text"  placeholder='Description' className='border p-3 rounded-lg  ' id="description" maxLength="62" minLength="10" required  onChange={handleChanges} value={formData.description}/>  
+                <textarea type="text"  placeholder='Description' className='border p-3 rounded-lg  ' id="description"  minLength="10" maxLength="500"required  onChange={handleChanges} value={formData.description}/>  
 
-                <input type="text"  placeholder='Address' className='border p-3 rounded-lg  ' id="address" maxLength="62" minLength="10" required  onChange={handleChanges} value={formData.address}/>
+                <input type="text"  placeholder='Address' className='border p-3 rounded-lg  ' id="address" minLength="10" maxLength="62" required  onChange={handleChanges} value={formData.address}/>
 
                 <div className="flex gap-6 flex-wrap" >
                     <div className="flex gap-2">
